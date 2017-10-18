@@ -8,7 +8,6 @@
     });
 }
 
-
 @($BuildTypes | ForEach-Object { $_.Types | ForEach-Object { if ($_.IsPublic) { $_.GetMethods() | Where-Object { $_.Name.Contains('Eval') } } } }) | Out-GridView
 @($BuildTypes | ForEach-Object {
     $n = $_.Name.ToString();
